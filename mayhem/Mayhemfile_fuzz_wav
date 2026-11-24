@@ -1,0 +1,11 @@
+project: savantenvs/gemrb
+target: fuzz-wav
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-wav/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_wav
+    libfuzzer: true
+    timeout: 5

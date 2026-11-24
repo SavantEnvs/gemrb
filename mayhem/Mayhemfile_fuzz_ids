@@ -1,0 +1,11 @@
+project: savantenvs/gemrb
+target: fuzz-ids
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-ids/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_ids
+    libfuzzer: true
+    timeout: 5

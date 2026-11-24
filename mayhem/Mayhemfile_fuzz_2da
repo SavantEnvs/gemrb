@@ -1,0 +1,11 @@
+project: savantenvs/gemrb
+target: fuzz-2da
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-2da/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/fuzz_2da
+    libfuzzer: true
+    timeout: 5
