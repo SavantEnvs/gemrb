@@ -1195,9 +1195,7 @@ def OpenLevelUpWindow ():
 	Button.SetState (IE_GUI_BUTTON_DISABLED)
 	Button.MakeDefault ()
 
-	# static Class selection
-	#Label = Window.GetControl (0x10000000)
-	#Label.SetText (7175)
+	# static "Class selection" label at 0x10000000
 
 	# 2-12 are the class name buttons
 	# 15-25 are the class level labels
