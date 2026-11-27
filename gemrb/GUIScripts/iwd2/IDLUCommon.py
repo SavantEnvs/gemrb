@@ -89,11 +89,6 @@ def LearnAnySpells (pc, BaseClassName, chargen=1):
 	MageTable = CommonTables.ClassSkills.GetValue (BaseClassName, "MAGESPELL", GTV_STR)
 	ClericTable = CommonTables.ClassSkills.GetValue (BaseClassName, "CLERICSPELL", GTV_STR)
 
-	# sorcerer types need this hack to not get too many spells
-	# for them the castable and known count progress differently
-	if Spellbook.HasSorcererBook (pc, BaseClassName):
-		MageTable = Spellbook.GetSpellLearningTable (MageTable)
-
 	# this is the current caster level to update to (for SetupSpellLevels)
 	level = 1
 	if not chargen:
