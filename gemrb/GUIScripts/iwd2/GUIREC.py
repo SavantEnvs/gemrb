@@ -1488,6 +1488,12 @@ def FinishLevelUp():
 
 	UpdateRecordsWindow (RecordsWindow)
 
+	# ensure at least a tick of game time has ran, so any pcfs have a
+	# chance to run before their stats potentially get read
+	# e.g. leveling into a sorcerer and immediately switching to the spellbook
+	# window would not show the correct max memo count if bonus slots are available
+	GemRB.GamePause (0, 1)
+	GemRB.SetTimedEvent (lambda: GemRB.GamePause (1, 3), 1)
 
 ###################################################
 # End of file GUIREC.py
